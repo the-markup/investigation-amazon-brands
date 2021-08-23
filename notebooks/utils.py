@@ -54,7 +54,7 @@ def calculate_table(df, amazon_asin):
 
     res = pd.DataFrame([
          {
-            'Category': 'Wholly Non-Amazon',
+            'Category': 'Unaffiliated',
             'Perc Products': df_non_amazon_[
                 ~df_non_amazon_.is_sold_by_amazon.isnull()
             ].asin.nunique() / n_products* 100,
@@ -62,79 +62,41 @@ def calculate_table(df, amazon_asin):
              'Perc first row': df_non_amazon_[df_non_amazon_.product_order <= 3].search_term.nunique() / n_samples* 100,
         },
         {
-            'Category': 'Amazon',
+            'Category': 'Amazon Brands',
             'Perc Products': df_amazon_brand_.asin.nunique() / n_products * 100,
             'Perc #1 spot': df_amazon_brand_[df_amazon_brand_.product_order == 1].search_term.nunique() / n_samples * 100,
-            'Perc first row': df_amazon_brand_[df_amazon_brand_.product_order <= 3].search_term.nunique() / n_samples * 100,
-            
+            'Perc first row': df_amazon_brand_[df_amazon_brand_.product_order <= 3].search_term.nunique() / n_samples * 100, 
         },
-
         {
-            'Category': 'Non-Amazon',
+            'Category': 'Competing Brands',
             'Perc Products': df_non_amazon_brand_.asin.nunique() / n_products* 100,
             'Perc #1 spot': df_non_amazon_brand_[df_non_amazon_brand_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_non_amazon_brand_[df_non_amazon_brand_.product_order <= 3].search_term.nunique() / n_samples* 100,
-            
         },
         {
-            'Category': 'Non-Amazon Brand and Not Amazon Sold',
-            'Perc Products': df_non_amazon_non_sold_.asin.nunique() / n_products* 100,
-            'Perc #1 spot': df_non_amazon_non_sold_[df_non_amazon_non_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row': df_non_amazon_non_sold_[df_non_amazon_non_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-            
-        },
-         {
-            'Category': 'Amazon product not featured',
-            'Perc Products': df_amazon_not_featured.asin.nunique() / n_products * 100,
-            'Perc #1 spot': df_amazon_not_featured[df_amazon_not_featured.product_order == 1].search_term.nunique() / n_samples * 100,
-            'Perc first row': df_amazon_not_featured[df_amazon_not_featured.product_order <= 3].search_term.nunique() / n_samples * 100,
-        },
-
-         {
             'Category': 'Sponsored',
             'Perc Products': (df_s.asin.nunique() / n_products) * 100,
             'Perc #1 spot': df_s[df_s.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_s[df_s.product_order <= 3].search_term.nunique() / n_samples* 100,
         },
-
         {
             'Category': 'Amazon sold',
             'Perc Products': df_amazon_sold_.asin.nunique() / n_products * 100,
             'Perc #1 spot': df_amazon_sold_[df_amazon_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_amazon_sold_[df_amazon_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-           
         },
         {
-            'Category': 'Amazon sold non-Amazon',
-            'Perc Products':  df_non_amazon_sold_by_amazon_.asin.nunique() / n_products * 100,
-            'Perc #1 spot':  df_non_amazon_sold_by_amazon_[ df_non_amazon_sold_by_amazon_.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row':  df_non_amazon_sold_by_amazon_[ df_non_amazon_sold_by_amazon_.product_order <= 3].search_term.nunique() / n_samples* 100,
-           
-        },
-
-         {
-            'Category': 'Non-Amazon sold',
+            'Category': 'Third-Party sold',
             'Perc Products': df_not_amazon_sold_.asin.nunique() / n_products * 100,
             'Perc #1 spot': df_not_amazon_sold_[df_not_amazon_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_not_amazon_sold_[df_not_amazon_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-             
         },
-
         {
             'Category': 'Amazon Shipped',
             'Perc Products': df_prime_.asin.nunique() / n_products * 100,
             'Perc #1 spot': df_prime_[df_prime_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_prime_[df_prime_.product_order <= 3].search_term.nunique() / n_samples* 100,
-
         },
-        
-        {
-            'Category': 'Amazon Shipped non-Amazon',
-            'Perc Products': df_prime_no_amazon.asin.nunique() / n_products * 100,
-            'Perc #1 spot': df_prime_no_amazon[df_prime_no_amazon.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row': df_prime_no_amazon[df_prime_no_amazon.product_order <= 3].search_term.nunique() / n_samples* 100,
-        }
-
     ])
                                     
     return res
@@ -178,7 +140,7 @@ def calculate_table_not_unique(df, amazon_asin):
 
     res = pd.DataFrame([
          {
-            'Category': 'Wholly Non-Amazon',
+            'Category': 'Unaffiliated',
             'Perc Products': len(df_non_amazon_[
                 ~df_non_amazon_.is_sold_by_amazon.isnull()
             ]) / n_products * 100,
@@ -186,79 +148,41 @@ def calculate_table_not_unique(df, amazon_asin):
              'Perc first row': df_non_amazon_[df_non_amazon_.product_order <= 3].search_term.nunique() / n_samples* 100,
         },
         {
-            'Category': 'Amazon',
+            'Category': 'Amazon brands',
             'Perc Products': len(df_amazon_brand_) / n_products * 100,
             'Perc #1 spot': df_amazon_brand_[df_amazon_brand_.product_order == 1].search_term.nunique() / n_samples * 100,
             'Perc first row': df_amazon_brand_[df_amazon_brand_.product_order <= 3].search_term.nunique() / n_samples * 100,
-            
         },
-
         {
-            'Category': 'Non-Amazon',
+            'Category': 'Competing brands',
             'Perc Products': len(df_non_amazon_brand_) / n_products* 100,
             'Perc #1 spot': df_non_amazon_brand_[df_non_amazon_brand_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_non_amazon_brand_[df_non_amazon_brand_.product_order <= 3].search_term.nunique() / n_samples* 100,
-            
         },
         {
-            'Category': 'Non-Amazon Brand and Not Amazon Sold',
-            'Perc Products': len(df_non_amazon_non_sold_) / n_products* 100,
-            'Perc #1 spot': df_non_amazon_non_sold_[df_non_amazon_non_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row': df_non_amazon_non_sold_[df_non_amazon_non_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-            
-        },
-         {
-            'Category': 'Amazon product not featured',
-            'Perc Products': len(df_amazon_not_featured) / n_products * 100,
-            'Perc #1 spot': df_amazon_not_featured[df_amazon_not_featured.product_order == 1].search_term.nunique() / n_samples * 100,
-            'Perc first row': df_amazon_not_featured[df_amazon_not_featured.product_order <= 3].search_term.nunique() / n_samples * 100,
-        },
-
-         {
             'Category': 'Sponsored',
             'Perc Products': len(df_s) / n_products * 100,
             'Perc #1 spot': df_s[df_s.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_s[df_s.product_order <= 3].search_term.nunique() / n_samples* 100,
         },
-
         {
             'Category': 'Amazon sold',
             'Perc Products': len(df_amazon_sold_) / n_products * 100,
             'Perc #1 spot': df_amazon_sold_[df_amazon_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_amazon_sold_[df_amazon_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-           
         },
         {
-            'Category': 'Amazon sold non-Amazon',
-            'Perc Products':  len(df_non_amazon_sold_by_amazon_) / n_products * 100,
-            'Perc #1 spot':  df_non_amazon_sold_by_amazon_[ df_non_amazon_sold_by_amazon_.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row':  df_non_amazon_sold_by_amazon_[ df_non_amazon_sold_by_amazon_.product_order <= 3].search_term.nunique() / n_samples* 100,
-           
-        },
-
-         {
-            'Category': 'Non-Amazon sold',
+            'Category': 'Third-party sold',
             'Perc Products': len(df_not_amazon_sold_) / n_products * 100,
             'Perc #1 spot': df_not_amazon_sold_[df_not_amazon_sold_.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row': df_not_amazon_sold_[df_not_amazon_sold_.product_order <= 3].search_term.nunique() / n_samples* 100,
-             
+            'Perc first row': df_not_amazon_sold_[df_not_amazon_sold_.product_order <= 3].search_term.nunique() / n_samples* 100, 
         },
-
         {
-            'Category': 'Amazon Shipped',
+            'Category': 'Amazon shipped',
             'Perc Products': len(df_prime_) / n_products * 100,
             'Perc #1 spot': df_prime_[df_prime_.product_order == 1].search_term.nunique() / n_samples* 100,
             'Perc first row': df_prime_[df_prime_.product_order <= 3].search_term.nunique() / n_samples* 100,
-
         },
-        
-        {
-            'Category': 'Amazon Shipped non-Amazon',
-            'Perc Products': len(df_prime_no_amazon) / n_products * 100,
-            'Perc #1 spot': df_prime_no_amazon[df_prime_no_amazon.product_order == 1].search_term.nunique() / n_samples* 100,
-            'Perc first row': df_prime_no_amazon[df_prime_no_amazon.product_order <= 3].search_term.nunique() / n_samples* 100,
-        }
-
     ])
                                     
     return res
