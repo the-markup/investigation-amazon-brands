@@ -85,7 +85,7 @@ You can download the raw data files in `data/input` using this command:
 `sh download_full_raw_data.sh`
  
 ### data/input/selenium-products (220 GB uncompressed)
-You can download the raw data here: (X GB compressed)
+You can download the raw data `selenium-products.tar.xz` (9 GB compressed) here.
  
 ### data/input/search-selenium/ (350 GB uncompressed)
-You can download the raw data here: (238 MB compressed)
+You can download the raw data `search-selenium.tar.xz` (238 MB compressed) here.

@@ -4,6 +4,30 @@ import json
 from lxml import html, etree
 import pandas as pd
 
+def is_sold_by_amazon(row, col='sold_by'):
+    amazon_sellers = ['zappos', 'whole foods', 'amazon']
+    if row[col] == None:
+        return None
+    to_check = str(row[col]).lower()
+    if any(seller in to_check for seller in amazon_sellers):
+        return True
+    elif row['product_by_amazon']:
+        return True
+    else:
+        return False
+    
+def is_shipped_by_amazon(row, col='shipped_by'):
+    amazon_sellers = ['zappos', 'whole foods', 'amazon']
+    if row[col] == None:
+        return None
+    to_check = str(row[col]).lower()
+    if any(seller in to_check for seller in amazon_sellers):
+        return True
+    elif row['product_by_amazon']:
+        return True
+    else:
+        return False
+
 def clean_text(text):
     """
     If text exists, this cleans it up a bit.
