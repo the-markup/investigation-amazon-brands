@@ -9,6 +9,10 @@ To use the full dataset, please refer to the [Download data](#download-data).
 
 ## Installation
 ### Python
+Make sure you have Python 3.6+ installed, we used [Miniconda](https://docs.conda.io/en/latest/miniconda.html) to create a Python 3.8 virtual environment.
+
+Then install the Python packages:<br>
+`pip install -r requirements.txt`
 
 ## Notebooks
 ### 0-data-preprocessing.ipynb
@@ -25,6 +29,12 @@ Analysis of how often the buy box's default shipper and seller changes between A
 
 ### 4-survey-results.ipynb
 Visualizing the survey results from our national panel of 1000 adults. These visualizations show up in the "survey results" section of the data analysis.
+
+### utils.py
+Contains convenient functions used in the notebooks.
+
+### parsers.py
+Contains parsers for search results and product pages.
 
 
 Data to do
@@ -50,7 +60,7 @@ data
 │   ├── selenium-products
 │   ├── seller_central
 │   └── spotcheck
-├── intermediary
+├── intermediary # change this to output?
 │   ├── amazon_private_label.csv.gz
 │   ├── best_sellers.csv.gz
 │   ├── generic_searches.csv.gz
@@ -65,10 +75,17 @@ data
 │   ├── top_search_asins.csv.gz
 │   ├── top_searches.csv.gz
 │   └── training_set.csv.gz
-└── output
-    ├── animation
-    ├── asins.yaml
+└── output # change this to viz?
     ├── figures
     └── tables
 
  ```
+ 
+You can download the raw data files in `data/input` using this command:
+`sh download_full_raw_data.sh`
+ 
+### data/input/selenium-products (220 GB uncompressed)
+You can download the raw data here: (X GB compressed)
+ 
+### data/input/search-selenium/ (350 GB uncompressed)
+You can download the raw data here: (238 MB compressed)
