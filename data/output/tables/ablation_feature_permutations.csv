@@ -1,0 +1,9 @@
+cols,accuracy
+without is_amazon,0.6259842519685039
+without reviews_delta,0.7039370078740158
+without is_top_clicked,0.7401574803149608
+without stars_delta,0.741732283464567
+without is_shipped_by_amazon,0.741732283464567
+without random_noise,0.741732283464567
+All Features,0.7425196850393702
+without is_sold_by_amazon,0.7425196850393702
