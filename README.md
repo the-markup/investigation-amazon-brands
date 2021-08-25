@@ -24,25 +24,18 @@ Bulk of the ranking analysis and stats in the data analysis
 ### 2-random-forest-analysis.ipynb
 Feature engineering training set, finding optimal hyperparameters, and performing the ablation study on a random forest model. The most predictive feature is verified using three separate methods.
 
-### 3-product-page-error-analysis.ipynb
+### 3-survey-results.ipynb
+Visualizing the survey results from our national panel of 1000 adults. These visualizations show up in the "survey results" section of the data analysis.
+
+### 4-limiations-product-page-changes.ipynb
 Analysis of how often the buy box's default shipper and seller changes between Amazon and a third-party. This stat sends up in the limitations.
 
-### 4-survey-results.ipynb
-Visualizing the survey results from our national panel of 1000 adults. These visualizations show up in the "survey results" section of the data analysis.
 
 ### utils.py
 Contains convenient functions used in the notebooks.
 
 ### parsers.py
 Contains parsers for search results and product pages.
-
-
-Data to do
-- searches
-- products
-- survey data
-- intermediates
-
 
 
 ## Data
