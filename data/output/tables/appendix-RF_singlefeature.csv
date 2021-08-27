@@ -1,0 +1,8 @@
+Feature,Accuracy
+with just is_amazon,0.7078740157480314
+with just is_sold_by_amazon,0.5992125984251968
+with just is_top_clicked,0.5472440944881889
+with just random_noise,0.5149606299212598
+with just reviews_delta,0.5433070866141732
+with just is_shipped_by_amazon,0.5173228346456693
+with just stars_delta,0.5291338582677165

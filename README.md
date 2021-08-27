@@ -44,8 +44,8 @@ This directory is where inputs, intermediaries and outputs are saved.
 ```
 data
 ├── input
+│   ├── combined_queries_with_source.csv
 │   ├── best_sellers
-│   ├── combined_queries_with_source.csv
 │   ├── generic_search_terms
 │   ├── search-private-label
 │   ├── search-selenium
@@ -53,32 +53,32 @@ data
 │   ├── selenium-products
 │   ├── seller_central
 │   └── spotcheck
-├── intermediary # change this to output?
-│   ├── amazon_private_label.csv.gz
-│   ├── best_sellers.csv.gz
-│   ├── generic_searches.csv.gz
-│   ├── our_brands_api.csv.gz
-│   ├── our_brands_filter.csv.gz
-│   ├── pairwise_training_set_2021_5_10.csv.gz
-│   ├── pairwise_training_set.csv.gz
-│   ├── products.csv.gz
-│   ├── products_with_meta.csv.gz
-│   ├── searches.csv.gz
-│   ├── spot_check
-│   ├── top_search_asins.csv.gz
-│   ├── top_searches.csv.gz
-│   └── training_set.csv.gz
 └── output # change this to viz?
+    ├── datasets
+    │   ├── amazon_private_label.csv.xz
+    │   ├── products.csv.xz
+    │   ├── searches.csv.xz
+    │   ├── pairwise_training_set.csv.gz
+    │   └── training_set.csv.gz
     ├── figures
     └── tables
-
  ```
  
+`data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428).
+
+`data/output/datasets/searches.csv.xz` parsed search result pages from top and generic searchs (N=187,534 product positions). You can filter this by `search_term` for each of these subsets from `data/input/combined_queries_with_source.csv`.
+
+`data/output/datasets/products.csv.xz` parsed product pages from the searches above (N=157,405 product pages). 
+`training_set.csv.gz` metadata used to train random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`
+
+## Download Data
 You can download the raw data files in `data/input` using this command:
 `sh download_full_raw_data.sh`
+
+Note this is not necessary to run notebooks and see full results.
  
 ### data/input/selenium-products (220 GB uncompressed)
-You can download the raw data `selenium-products.tar.xz` (9 GB compressed) here.
+Product pages collected in February 2021. You can download the raw data `selenium-products.tar.xz` (9 GB compressed) here.
  
 ### data/input/search-selenium/ (350 GB uncompressed)
-You can download the raw data `search-selenium.tar.xz` (238 MB compressed) here.
+Search results collected in January 2021. You can download the raw data `search-selenium.tar.xz` (238 MB compressed) here.
