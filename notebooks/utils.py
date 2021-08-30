@@ -46,10 +46,10 @@ def calculate_table(df, amazon_asin):
 
     df_non_amazon_ = df_ns[
         (~df_ns.asin.isin(amazon_asin))
-      & (df_ns.is_sold_by_amazon == False)
-      & (df_ns.is_shipped_by_amazon == False)
-      & (df_ns.is_prime == False) 
-      & (df_ns.is_fresh == False)
+      & (df_ns.is_sold_by_amazon != True)
+      & (df_ns.is_shipped_by_amazon != True)
+      & (df_ns.is_prime != True) 
+      & (df_ns.is_fresh != True)
     ]
 
     res = pd.DataFrame([
@@ -132,10 +132,10 @@ def calculate_table_not_unique(df, amazon_asin):
 
     df_non_amazon_ = df_ns[
         (~df_ns.asin.isin(amazon_asin))
-      & (df_ns.is_sold_by_amazon == False)
-      & (df_ns.is_shipped_by_amazon == False)
-      & (df_ns.is_prime == False) 
-      & (df_ns.is_fresh == False)
+      & (df_ns.is_sold_by_amazon != True)
+      & (df_ns.is_shipped_by_amazon != True)
+      & (df_ns.is_prime != True) 
+      & (df_ns.is_fresh != True)
     ]
 
     res = pd.DataFrame([

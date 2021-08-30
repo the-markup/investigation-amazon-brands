@@ -275,43 +275,78 @@ def process_best_sellers(fn):
 def parse_product_page(fn):
     """"""
     dom = html.fromstring(open(fn).read())
-    shipped_by = clean_text_list_to_str(dom.xpath(
-        '(.//span[@id="tabular-buybox-truncate-0"]//span[contains(@class, "a-truncate")]//text())[1]'
-    ))
-    
-    if not shipped_by:
-        shipped_by = clean_text_list_to_str(dom.xpath(
-            '(.//div[@data-feature-name="freshShipsFromSoldBy"]'
-            '//span[@class="a-size-small a-color-base"]//text())[1]'
-        ))
-    
-    sold_by = clean_text_list_to_str(dom.xpath(
-        '(.//span[@id="tabular-buybox-truncate-1"]'
-        '//span[contains(@class, "a-truncate")]//text())[2]'
-    ))
-    if not sold_by:
+      
+    if dom.xpath('boolean(.//div[@id="merchant-info" and '
+                 'contains(text(), "Ships from and sold by Amazon") or'
+                 'contains(text(), "Ships from and sold by ACI Gift Cards LLC, an Amazon company.")])'):
+        sold_by = "Amazon.com"
+        shipped_by= "Amazon.com"
+    elif dom.xpath('boolean(.//div[@data-feature-name="audiblebuyboxv2"])'):
+            sold_by = 'Amazon AUDIBLE'
+            shipped_by = 'Amazon AUDIBLE'
+    else:
+        if dom.xpath('boolean(.//div[@data-client-id="primeAcquisition"])'):
+            shipped_by = 'Amazon.com'
+        else:
+            shipped_by = clean_text_list_to_str(dom.xpath(
+                '(.//span[@id="tabular-buybox-truncate-0"]//'
+                'span[contains(@class, "a-truncate")]//text())[1]'))
+            if not shipped_by:
+                shipped_by = clean_text_list_to_str(dom.xpath(
+                    '(.//div[@data-feature-name="freshShipsFromSoldBy"]'
+                    '//span[@class="a-size-small a-color-base"]//text())[1]'))
         sold_by = clean_text_list_to_str(dom.xpath(
-                '(.//div[@data-feature-name="freshShipsFromSoldBy"]'
-                '//span[@class="a-size-small a-color-base"]//text())[2]'
-        ))
+            '(.//span[@id="tabular-buybox-truncate-1"]'
+            '//span[contains(@class, "a-truncate")]//text())[1]'))
+        if not sold_by:
+            sold_by = clean_text_list_to_str(dom.xpath(
+                    '(.//div[@data-feature-name="freshShipsFromSoldBy"]'
+                    '//span[@class="a-size-small a-color-base"]//text())[2]'))
+        if not sold_by:
+            if dom.xpath('boolean(.//div[@id="merchant-info" and '
+                         'a[@id="SSOFpopoverLink" and '
+                         'contains(text(), "Fulfilled by Amazon")]])'):
+                sold_by = clean_text_list_to_str(dom.xpath(
+                    './/a[@id="sellerProfileTriggerId"]//text()'))
+                shipped_by = "Amazon.com"
+
+            elif dom.xpath('boolean(.//div[@id="merchant-info" and '
+                           'contains(text(), "Ships from and sold by")])'):
+                sold_by = clean_text_list_to_str(
+                    dom.xpath('.//a[@id="sellerProfileTriggerId"]//text()'))
+                shipped_by = sold_by
+            elif dom.xpath('boolean(.//td[@class="a-span1 a-color-secondary '
+                           'a-text-left a-align-top kindlePriceLabel a-nowrap"])'):
+                sold_by = 'Amazon KINDLE'
+                shipped_by = 'Amazon KINDLE'
+            elif dom.xpath('.//div[@data-cel-widget="bylineInfo" and .//span[contains(text(), "Kindle Edition")]]'):
+                sold_by = 'Amazon KINDLE'
+                shipped_by = 'Amazon KINDLE'
+            else: # used products
+                sold_by = clean_text_list_to_str(dom.xpath(
+                    './/a[@id="sellerProfileTriggerId"]//text()'))
+
+        
     no_buybox_winner = dom.xpath(
         'boolean(.//a[contains(@title,"See All Buying Options")])'
     )
-    
-    suggestions = clean_text_list(dom.xpath('.//*[@data-asin and not(@data-closed-captions)]//@data-asin'))
-    
+    suggestions = clean_text_list(dom.xpath(
+        './/*[@data-asin and not(@data-closed-captions)]//@data-asin'
+    ))
     third_party = dom.xpath(
         'boolean(.//span[@data-action="show-all-offers-display"])'
     )
-    
     by_amazon = dom.xpath(
         'boolean(.//a[@id="gc-brand-name-link" and contains(text(), "Amazon")])'
     )
     s_and_s = dom.xpath(
-        'boolean(.//span[@class="a-size-small a-color-secondary" and contains(text(), "Ships from and sold by Amazon.com")])'
+        'boolean(.//span[@class="a-size-small a-color-secondary" and '
+        'contains(text(), "Ships from and sold by Amazon.com")])'
     )
     carousel = dom.xpath(
-        'boolean(.//div[@data-a-carousel-options and .//h2[contains(text(), "from our brands") or contains(text(), "Amazon Device")]]//@data-a-carousel-options)'
+        'boolean(.//div[@data-a-carousel-options and '
+        './/h2[contains(text(), "from our brands") or '
+        'contains(text(), "Amazon Device")]]//@data-a-carousel-options)'
     )
     ads = []
     for ad in dom.xpath(
@@ -325,7 +360,7 @@ def parse_product_page(fn):
         shipped_by = 'Amazon.com'
     
     is_out_of_stock = dom.xpath(
-        'boolean(.//div[@id="outOfStock"])'
+        'boolean(.//div[@id="outOfStock" or @id="almOutOfStockBuyBox_feature_div"])'
     )
     
     is_page_gone = dom.xpath(
@@ -334,6 +369,7 @@ def parse_product_page(fn):
     title = clean_text_list_to_str(dom.xpath(
         './/span[@id="productTitle"]//text()')
     )
+        
     records = {
         'fn': fn,
         'title': title,
