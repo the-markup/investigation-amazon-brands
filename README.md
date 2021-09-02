@@ -64,8 +64,7 @@ data
     └── spotcheck
  ```
 
-`data/output/tables` contains csv files for each table in the methodology paper.
-`data/output/figures/` contains figures and data behind figures as csv files.
+`data/output/tables` contains tables, figures, and datasets used in our methodolgy.
 
 `data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428).
 
@@ -78,8 +77,10 @@ data
 Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. They are not hosted in this repository.
 
 ## Download Data
-You can download the HTML and JSON files in `data/input` using this command:
-`sh download_input_data.sh`
+You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands`.
+
+If you trust us, you can download the HTML and JSON files in `data/input` using this script:
+`sh data/download_input_data.sh`
 
 Note this is not necessary to run notebooks and see full results.
  
@@ -102,4 +103,4 @@ Seller central data for Q4 2020. `All_Q4_2020.csv.xz` (105 MB compressioned).
 Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed).
 
 ### data/input/spotcheck (4 GB)
-A sub-sample of product pages for spotchecking buy box changes. Download the HTML files (159 MB compressed)
+A sub-sample of product pages for spotchecking buy box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed).
