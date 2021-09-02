@@ -43,42 +43,63 @@ This directory is where inputs, intermediaries and outputs are saved.
 
 ```
 data
-├── input
-│   ├── combined_queries_with_source.csv
-│   ├── best_sellers
-│   ├── generic_search_terms
-│   ├── search-private-label
-│   ├── search-selenium
-│   ├── search-selenium-our-brands-filter_
-│   ├── selenium-products
-│   ├── seller_central
-│   └── spotcheck
-└── output # change this to viz?
-    ├── datasets
-    │   ├── amazon_private_label.csv.xz
-    │   ├── products.csv.xz
-    │   ├── searches.csv.xz
-    │   ├── pairwise_training_set.csv.gz
-    │   └── training_set.csv.gz
-    ├── figures
-    └── tables
+├── output
+│   ├── figures
+│   ├── tables
+│   └── datasets
+│       ├── amazon_private_label.csv.xz
+│       ├── products.csv.xz
+│       ├── searches.csv.xz
+│       ├── pairwise_training_set.csv.gz
+│       └── training_set.csv.gz
+└── input
+    ├── combined_queries_with_source.csv
+    ├── best_sellers
+    ├── generic_search_terms
+    ├── search-private-label
+    ├── search-selenium
+    ├── search-selenium-our-brands-filter_
+    ├── selenium-products
+    ├── seller_central
+    └── spotcheck
  ```
- 
+
+`data/output/tables` contains csv files for each table in the methodology paper.
+`data/output/figures/` contains figures and data behind figures as csv files.
+
 `data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428).
 
 `data/output/datasets/searches.csv.xz` parsed search result pages from top and generic searchs (N=187,534 product positions). You can filter this by `search_term` for each of these subsets from `data/input/combined_queries_with_source.csv`.
 
 `data/output/datasets/products.csv.xz` parsed product pages from the searches above (N=157,405 product pages). 
-`training_set.csv.gz` metadata used to train random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`
+
+`data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
+
+Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. They are not hosted in this repository.
 
 ## Download Data
-You can download the raw data files in `data/input` using this command:
-`sh download_full_raw_data.sh`
+You can download the HTML and JSON files in `data/input` using this command:
+`sh download_input_data.sh`
 
 Note this is not necessary to run notebooks and see full results.
  
+### data/input/search-selenium/ (12 GB uncompressed)
+First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) here. 
+
 ### data/input/selenium-products (220 GB uncompressed)
-Product pages collected in February 2021. You can download the raw data `selenium-products.tar.xz` (9 GB compressed) here.
+Product pages collected in February 2021. Download the HTML files `selenium-products.tar.xz` (9 GB compressed) here.
  
-### data/input/search-selenium/ (350 GB uncompressed)
-Search results collected in January 2021. You can download the raw data `search-selenium.tar.xz` (238 MB compressed) here.
+### data/input/search-selenium-our-brands-filter_ (35 GB uncompressed)
+Search results filtered by "our brands". Contains every page of search results. Download `search-selenium-our-brands-filter_.tar.xz` (403 MB compressed)
+
+### data/input/search-private-label/ (25 GB uncompressed)
+API responses for search results filtered down to products Amazon identifies as "our brands". Contains paginated API results. Download the JSON files `search-private-label.tar.xz` (402 MB uncompressed)
+
+### data/input/seller_central/ (105 MB)
+Seller central data for Q4 2020. `All_Q4_2020.csv.xz` (105 MB compressioned).
+
+## data/input/best_sellers/ (4 GB)
+Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed).
+
+### data/input/spotcheck (4 GB)
+A sub-sample of product pages for spotchecking buy box changes. Download the HTML files (159 MB compressed)
