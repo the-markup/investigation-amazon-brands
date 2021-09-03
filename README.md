@@ -64,7 +64,7 @@ data
     └── spotcheck
  ```
 
-`data/output/tables` contains tables, figures, and datasets used in our methodolgy.
+`data/output/` contains tables, figures, and datasets used in our methodolgy.
 
 `data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428 products). We use each product's unique ID (called an ASIN) to identify Amazon's own products in our methodology.
 
