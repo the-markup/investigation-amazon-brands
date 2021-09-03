@@ -3,9 +3,10 @@ This repository contains code to reproduce the findings featured in our story, "
 
 Our methodology is described in "[How We TK](https://themarkup.org/)".
 
-The the figures and tables from our analysis can be found in the `data` folder. <br>
-To use the full input dataset, please refer to the [Download data](#download-data).<br>
-Jupyter notebooks used for data preprocessing and analysis are avialble in the `notebooks` folder.
+Data that we collected and analyzed are in the `data` folder.<br>
+To use the full input dataset (which is not hosted here), please refer to the [Download data](#download-data).<br>
+
+Jupyter notebooks used for data preprocessing and analysis are avialble in the `notebooks` folder.<br>
 Descriptions for each notebook are outlined in the [Notebooks](#notebooks) section below.
 
 ## Installation
@@ -86,10 +87,10 @@ If you trust us, you can download the HTML and JSON files in `data/input` using 
 ### data/input/search-selenium/ (12 GB uncompressed)
 First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) here. 
 
-### data/input/selenium-products (220 GB uncompressed)
+### data/input/selenium-products/ (220 GB uncompressed)
 Product pages collected in February 2021. Download the HTML files `selenium-products.tar.xz` (9 GB compressed) here.
  
-### data/input/search-selenium-our-brands-filter_ (35 GB uncompressed)
+### data/input/search-selenium-our-brands-filter_/ (35 GB uncompressed)
 Search results filtered by "our brands". Contains every page of search results. Download `search-selenium-our-brands-filter_.tar.xz` (403 MB compressed)
 
 ### data/input/search-private-label/ (25 GB uncompressed)
@@ -101,5 +102,5 @@ Seller central data for Q4 2020. `All_Q4_2020.csv.xz` (105 MB compressioned).
 ### data/input/best_sellers/ (4 GB)
 Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed).
 
-### data/input/spotcheck (4 GB)
+### data/input/spotcheck/ (4 GB)
 A sub-sample of product pages for spotchecking buy box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed).
