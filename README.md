@@ -18,7 +18,7 @@ Then install the Python packages:<br>
 
 ## Notebooks
 ### 0-data-preprocessing.ipynb
-This notebook parses Amazon search results, Amazon product pages, and produces the intermediary datasets used in ranking analysis and random forest classifiers.
+This notebook parses Amazon search results, Amazon product pages, and produces the intermediary datasets (`data/output/datasets/`) used in ranking analysis and random forest classifiers.
 
 ### 1-data-analysis-search-results.ipynb
 Bulk of the ranking analysis and stats in the data analysis
@@ -27,7 +27,7 @@ Bulk of the ranking analysis and stats in the data analysis
 Feature engineering training set, finding optimal hyperparameters, and performing the ablation study on a random forest model. The most predictive feature is verified using three separate methods.
 
 ### 3-survey-results.ipynb
-Visualizing the survey results from our national panel of 1000 adults. These visualizations show up in the "survey results" section of the data analysis.
+Visualizing the survey results from our national panel of 1000 adults.
 
 ### 4-limiations-product-page-changes.ipynb
 Analysis of how often the buy box's default shipper and seller changes between Amazon and a third-party. This stat sends up in the limitations.
