@@ -17,13 +17,16 @@ Then install the Python packages:<br>
 `pip install -r requirements.txt`
 
 ## Notebooks
+These notebooks are intended to be run sequentially, but they are not dependent on one another.
+If you want quick overview of the methodology you only need to concern yourself with the notebooks with an asterix(*).
+
 ### 0-data-preprocessing.ipynb
 This notebook parses Amazon search results, Amazon product pages, and produces the intermediary datasets (`data/output/datasets/`) used in ranking analysis and random forest classifiers.
 
-### 1-data-analysis-search-results.ipynb
+### 1-data-analysis-search-results.ipynb *
 Bulk of the ranking analysis and stats in the data analysis
 
-### 2-random-forest-analysis.ipynb
+### 2-random-forest-analysis.ipynb *
 Feature engineering training set, finding optimal hyperparameters, and performing the ablation study on a random forest model. The most predictive feature is verified using three separate methods.
 
 ### 3-survey-results.ipynb
