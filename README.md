@@ -4,8 +4,9 @@ This repository contains code to reproduce the findings featured in our story, "
 Our methodology is described in "[How We TK](https://themarkup.org/)".
 
 The the figures and tables from our analysis can be found in the `data` folder. <br>
-Jupyter Notebooks for preprocessing and analyzing data are in the `notebooks` folder.<br>
-To use the full input dataset, please refer to the [Download data](#download-data).
+To use the full input dataset, please refer to the [Download data](#download-data).<br>
+Jupyter notebooks used for data preprocessing and analysis are avialble in the `notebooks` folder.
+Descriptions for each notebook are outlined in the [Notebooks](#notebooks) section below.
 
 ## Installation
 ### Python
@@ -35,7 +36,6 @@ Contains convenient functions used in the notebooks.
 
 ### parsers.py
 Contains parsers for search results and product pages.
-
 
 ## Data
 This directory is where inputs, intermediaries and outputs are saved.
