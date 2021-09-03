@@ -4,8 +4,8 @@ This repository contains code to reproduce the findings featured in our story, "
 Our methodology is described in "[How We TK](https://themarkup.org/)".
 
 The the figures and tables from our analysis can be found in the `data` folder. <br>
-Since our full dataset was too large to place in GitHub, we provide a subset in the `data-subsample` folder. <br>
-To use the full dataset, please refer to the [Download data](#download-data).
+Jupyter Notebooks for preprocessing and analyzing data are in the `notebooks` folder.<br>
+To use the full input dataset, please refer to the [Download data](#download-data).
 
 ## Installation
 ### Python
@@ -29,7 +29,6 @@ Visualizing the survey results from our national panel of 1000 adults. These vis
 
 ### 4-limiations-product-page-changes.ipynb
 Analysis of how often the buy box's default shipper and seller changes between Amazon and a third-party. This stat sends up in the limitations.
-
 
 ### utils.py
 Contains convenient functions used in the notebooks.
@@ -82,7 +81,7 @@ You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands
 If you trust us, you can download the HTML and JSON files in `data/input` using this script:
 `sh data/download_input_data.sh`
 
-Note this is not necessary to run notebooks and see full results.
+**Note this is not necessary to run notebooks and see full results.**
  
 ### data/input/search-selenium/ (12 GB uncompressed)
 First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) here. 
@@ -99,7 +98,7 @@ API responses for search results filtered down to products Amazon identifies as 
 ### data/input/seller_central/ (105 MB)
 Seller central data for Q4 2020. `All_Q4_2020.csv.xz` (105 MB compressioned).
 
-## data/input/best_sellers/ (4 GB)
+### data/input/best_sellers/ (4 GB)
 Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed).
 
 ### data/input/spotcheck (4 GB)
