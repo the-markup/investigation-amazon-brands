@@ -66,7 +66,7 @@ data
 
 `data/output/tables` contains tables, figures, and datasets used in our methodolgy.
 
-`data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428).
+`data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428 products). We use each product's unique ID (called an ASIN) to identify Amazon's own products in our methodology.
 
 `data/output/datasets/searches.csv.xz` parsed search result pages from top and generic searchs (N=187,534 product positions). You can filter this by `search_term` for each of these subsets from `data/input/combined_queries_with_source.csv`.
 
