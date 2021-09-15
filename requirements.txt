@@ -1,4 +1,4 @@
-aws-cli
+awscli
 tqdm
 lxml
 numpy
