@@ -78,9 +78,9 @@ data
 Every file in `data/input` except `combined_queries_with_source.csv` is stored in Google Drive.
 
 ## Download Data
-You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands`.
+You can find the raw inputs compressed and tarred in `data/input`.
 
-If you trust us, you can download the HTML and JSON files in `data/input` using this script:
+If you trust us, you can extract the HTML and JSON files in `data/input` using this script:
 `sh data/download_input_data.sh`
 
 **Note this is not necessary to run notebooks and see full results.**
