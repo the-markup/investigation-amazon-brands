@@ -1,7 +1,5 @@
 # Amazon Brands and Exclusives
-This repository contains code to reproduce the findings featured in our story, "[TK](https://themarkup.org/)" from our series, [TK](https://themarkup.org/series/).
-
-Our methodology is described in "[How We TK](https://themarkup.org/)".
+This repository contains code to reproduce the findings featured in the methodology attached.
 
 Data that we collected and analyzed are in the `data` folder.<br>
 To use the full input dataset (which is not hosted here), please refer to the [Download data](#download-data).<br>
@@ -77,7 +75,7 @@ data
 
 `data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
 
-Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. They are not hosted in this repository.
+Every file in `data/input` except `combined_queries_with_source.csv` is stored in Google Drive.
 
 ## Download Data
 You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands`.
@@ -88,7 +86,7 @@ If you trust us, you can download the HTML and JSON files in `data/input` using 
 **Note this is not necessary to run notebooks and see full results.**
  
 ### data/input/search-selenium/ (12 GB uncompressed)
-First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) [here](). 
+First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed). 
 
 ### data/input/selenium-products/ (220 GB uncompressed)
 Product pages collected in February 2021. Download the HTML files `selenium-products.tar.xz` (9 GB compressed) here.
