@@ -84,6 +84,9 @@ def parse_product_listing(product, fn, search_term, product_order,
     reviews = clean_text_list_to_str(product.xpath('.//a[contains(@href, "#customerReviews")]//text()'))
     if reviews:
         reviews = reviews.replace(',', '')
+    product_img = clean_text_list_to_str(
+        product.xpath('.//img[@data-image-latency="s-product-image"]//@src')
+    )
     row = {
         "asin": asin,
         "product_name": product_name,
@@ -102,6 +105,7 @@ def parse_product_listing(product, fn, search_term, product_order,
         "product_type": product_type,
         "price": price,
         "price_std": price_std,
+        "product_img": product_img,
         "filename": fn
     }
     
@@ -210,11 +214,9 @@ def process_our_brands_filter(fn, year='2021'):
     search_term = fn.split(year)[0].strip('/').split('/')[-1]    
 
     # check these un-filtered searches.
-    
     if not dom.xpath(
         'boolean(.//span[contains(text(), "Our Brands")])'
     ):
-#         print("not our filtered")
         return []
     
     # need to pop off "all-departments stuff"
@@ -354,7 +356,6 @@ def parse_product_page(fn):
     ):
         ads.append(etree.tostring(ad))
         
-    
     if s_and_s:
         sold_by = 'Amazon.com'
         shipped_by = 'Amazon.com'

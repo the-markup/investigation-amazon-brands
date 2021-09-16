@@ -88,7 +88,7 @@ If you trust us, you can download the HTML and JSON files in `data/input` using 
 **Note this is not necessary to run notebooks and see full results.**
  
 ### data/input/search-selenium/ (12 GB uncompressed)
-First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) here. 
+First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) [here](). 
 
 ### data/input/selenium-products/ (220 GB uncompressed)
 Product pages collected in February 2021. Download the HTML files `selenium-products.tar.xz` (9 GB compressed) here.
