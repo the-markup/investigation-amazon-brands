@@ -1,39 +1,39 @@
 # Amazon Brands and Exclusives
-This repository contains code to reproduce the findings featured in our story, "[TK](https://themarkup.org/)" from our series, [TK](https://themarkup.org/series/).
+This repository contains code to reproduce the findings featured in our story "[TK](https://themarkup.org/)" from our series [TK](https://themarkup.org/series/).
 
 Our methodology is described in "[How We TK](https://themarkup.org/)".
 
-Data that we collected and analyzed are in the `data` folder.<br>
+Data that we collected and analyzed is in the `data` folder.<br>
 To use the full input dataset (which is not hosted here), please refer to the [Download data](#download-data).<br>
 
-Jupyter notebooks used for data preprocessing and analysis are avialble in the `notebooks` folder.<br>
+Jupyter notebooks used for data preprocessing and analysis are available in the `notebooks` folder.<br>
 Descriptions for each notebook are outlined in the [Notebooks](#notebooks) section below.
 
 ## Installation
 ### Python
-Make sure you have Python 3.6+ installed, we used [Miniconda](https://docs.conda.io/en/latest/miniconda.html) to create a Python 3.8 virtual environment.
+Make sure you have Python 3.6+ installed. We used [Miniconda](https://docs.conda.io/en/latest/miniconda.html) to create a Python 3.8 virtual environment.
 
 Then install the Python packages:<br>
 `pip install -r requirements.txt`
 
 ## Notebooks
 These notebooks are intended to be run sequentially, but they are not dependent on one another.
-If you want quick overview of the methodology you only need to concern yourself with the notebooks with an asterix(*).
+If you want a quick overview of the methodology, you only need to concern yourself with the notebooks with an asterisk(*).
 
 ### 0-data-preprocessing.ipynb
-This notebook parses Amazon search results, Amazon product pages, and produces the intermediary datasets (`data/output/datasets/`) used in ranking analysis and random forest classifiers.
+This notebook parses Amazon search results and Amazon product pages, and produces the intermediary datasets (`data/output/datasets/`) used in ranking analysis and random forest classifiers.
 
 ### 1-data-analysis-search-results.ipynb *
-Bulk of the ranking analysis and stats in the data analysis
+Bulk of the ranking analysis and stats in the data analysis.
 
 ### 2-random-forest-analysis.ipynb *
 Feature engineering training set, finding optimal hyperparameters, and performing the ablation study on a random forest model. The most predictive feature is verified using three separate methods.
 
 ### 3-survey-results.ipynb
-Visualizing the survey results from our national panel of 1000 adults.
+Visualizing the survey results from our national panel of 1,000 adults.
 
 ### 4-limiations-product-page-changes.ipynb
-Analysis of how often the buy box's default shipper and seller changes between Amazon and a third-party. This stat sends up in the limitations.
+Analysis of how often the Buy Box's default shipper and seller change between Amazon and a third party. This stat sends up in the limitations.
 
 ### utils.py
 Contains convenient functions used in the notebooks.
@@ -42,7 +42,7 @@ Contains convenient functions used in the notebooks.
 Contains parsers for search results and product pages.
 
 ## Data
-This directory is where inputs, intermediaries and outputs are saved.
+This directory is where inputs, intermediaries, and outputs are saved.
 
 ```
 data
@@ -67,17 +67,17 @@ data
     └── spotcheck
  ```
 
-`data/output/` contains tables, figures, and datasets used in our methodolgy.
+`data/output/` contains tables, figures, and datasets used in our methodology.
 
 `data/output/datasets/amazon_private_label.csv.xz` is our dataset of Amazon brands, exclusives, and proprietary electronics (N=137,428 products). We use each product's unique ID (called an ASIN) to identify Amazon's own products in our methodology.
 
-`data/output/datasets/searches.csv.xz` parsed search result pages from top and generic searchs (N=187,534 product positions). You can filter this by `search_term` for each of these subsets from `data/input/combined_queries_with_source.csv`.
+`data/output/datasets/searches.csv.xz` parsed search result pages from top and generic searches (N=187,534 product positions). You can filter this by `search_term` for each of these subsets from `data/input/combined_queries_with_source.csv`.
 
 `data/output/datasets/products.csv.xz` parsed product pages from the searches above (N=157,405 product pages). 
 
-`data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
+`data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally, feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
 
-Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. They are not hosted in this repository.
+Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. Those are not hosted in this repository.
 
 ## Download Data
 You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands`.
@@ -106,4 +106,4 @@ Seller central data for Q4 2020. Download the CSV file `All_Q4_2020.csv.xz` (105
 Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed) here.
 
 ### data/input/spotcheck/ (4 GB)
-A sub-sample of product pages for spotchecking buy box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed) here.
+A sub-sample of product pages for spot-checking Buy Box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed) here.
