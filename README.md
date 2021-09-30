@@ -1,5 +1,7 @@
 # Amazon Brands and Exclusives
-This repository contains code to reproduce the findings featured in the methodology attached.
+This repository contains code to reproduce the findings featured in our story, "[TK](https://themarkup.org/)" from our series, [TK](https://themarkup.org/series/).
+
+Our methodology is described in "[How We TK](https://themarkup.org/)".
 
 Data that we collected and analyzed are in the `data` folder.<br>
 To use the full input dataset (which is not hosted here), please refer to the [Download data](#download-data).<br>
@@ -75,18 +77,18 @@ data
 
 `data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
 
-Every file in `data/input` except `combined_queries_with_source.csv` is stored in Google Drive.
+Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. They are not hosted in this repository.
 
 ## Download Data
-You can find the raw inputs compressed and tarred in `data/input`.
+You can find the raw inputs in `data/input` in `s3://investigation-amazon-brands`.
 
-If you trust us, you can extract the HTML and JSON files in `data/input` using this script:
+If you trust us, you can download the HTML and JSON files in `data/input` using this script:
 `sh data/download_input_data.sh`
 
 **Note this is not necessary to run notebooks and see full results.**
  
 ### data/input/search-selenium/ (12 GB uncompressed)
-First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed). 
+First page of search results collected in January 2021. Download the HTML files `search-selenium.tar.xz` (238 MB compressed) [here](). 
 
 ### data/input/selenium-products/ (220 GB uncompressed)
 Product pages collected in February 2021. Download the HTML files `selenium-products.tar.xz` (9 GB compressed) here.
@@ -95,13 +97,13 @@ Product pages collected in February 2021. Download the HTML files `selenium-prod
 Search results filtered by "our brands". Contains every page of search results. Download `search-selenium-our-brands-filter_.tar.xz` (403 MB compressed)
 
 ### data/input/search-private-label/ (25 GB uncompressed)
-API responses for search results filtered down to products Amazon identifies as "our brands". Contains paginated API results. Download the JSON files `search-private-label.tar.xz` (402 MB uncompressed)
+API responses for search results filtered down to products Amazon identifies as "our brands". Contains paginated API results. Download the JSON files `search-private-label.tar.xz` (402 MB uncompressed) here.
 
 ### data/input/seller_central/ (105 MB)
-Seller central data for Q4 2020. `All_Q4_2020.csv.xz` (105 MB compressioned).
+Seller central data for Q4 2020. Download the CSV file `All_Q4_2020.csv.xz` (105 MB compressioned) here.
 
 ### data/input/best_sellers/ (4 GB)
-Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed).
+Amazon's best sellers under the category "Amazon Devices & Accessories". Download the HTML files `best_sellers.tar.xz` (60MB compressed) here.
 
 ### data/input/spotcheck/ (4 GB)
-A sub-sample of product pages for spotchecking buy box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed).
+A sub-sample of product pages for spotchecking buy box changes. Download the HTML files `spotcheck.tar.xz` (159 MB compressed) here.
