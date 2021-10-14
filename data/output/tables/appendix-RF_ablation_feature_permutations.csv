@@ -1,0 +1,128 @@
+cols,accuracy
+"('random_noise',)",0.5149606299212598
+"('is_shipped_by_amazon',)",0.5173228346456693
+"('is_shipped_by_amazon', 'random_noise')",0.5244094488188976
+"('stars_delta',)",0.5291338582677165
+"('stars_delta', 'is_shipped_by_amazon')",0.5299212598425196
+"('reviews_delta', 'is_shipped_by_amazon', 'random_noise')",0.5307086614173228
+"('stars_delta', 'reviews_delta')",0.5338582677165353
+"('reviews_delta', 'random_noise')",0.5338582677165353
+"('stars_delta', 'random_noise')",0.5346456692913385
+"('reviews_delta', 'is_shipped_by_amazon')",0.5401574803149606
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon')",0.5417322834645668
+"('reviews_delta',)",0.5433070866141732
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'random_noise')",0.5433070866141732
+"('is_top_clicked',)",0.5472440944881889
+"('reviews_delta', 'is_top_clicked', 'random_noise')",0.5496062992125983
+"('stars_delta', 'is_shipped_by_amazon', 'random_noise')",0.5496062992125984
+"('stars_delta', 'reviews_delta', 'random_noise')",0.5503937007874015
+"('is_top_clicked', 'random_noise')",0.5535433070866141
+"('stars_delta', 'is_top_clicked', 'random_noise')",0.5559055118110235
+"('stars_delta', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.5582677165354331
+"('stars_delta', 'reviews_delta', 'is_top_clicked', 'random_noise')",0.5598425196850393
+"('is_shipped_by_amazon', 'is_top_clicked')",0.5606299212598426
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.5629921259842521
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_top_clicked')",0.5629921259842521
+"('reviews_delta', 'is_top_clicked')",0.5637795275590551
+"('stars_delta', 'reviews_delta', 'is_top_clicked')",0.5653543307086613
+"('reviews_delta', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.5677165354330709
+"('is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.5685039370078739
+"('stars_delta', 'is_top_clicked')",0.5685039370078739
+"('reviews_delta', 'is_shipped_by_amazon', 'is_top_clicked')",0.5740157480314961
+"('stars_delta', 'is_shipped_by_amazon', 'is_top_clicked')",0.5795275590551181
+"('is_sold_by_amazon',)",0.5992125984251968
+"('is_shipped_by_amazon', 'is_sold_by_amazon')",0.610236220472441
+"('is_sold_by_amazon', 'random_noise')",0.611023622047244
+"('is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.6181102362204725
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.6244094488188976
+"('reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.6244094488188976
+"('is_sold_by_amazon', 'is_top_clicked')",0.6244094488188976
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.6251968503937008
+"('is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6259842519685039
+"('reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.6259842519685039
+"('is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.6275590551181102
+"('reviews_delta', 'is_sold_by_amazon', 'random_noise')",0.6275590551181102
+"('stars_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.6283464566929133
+"('stars_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.6283464566929133
+"('stars_delta', 'reviews_delta', 'is_sold_by_amazon')",0.6291338582677165
+"('stars_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6314960629921259
+"('stars_delta', 'reviews_delta', 'is_sold_by_amazon', 'random_noise')",0.6322834645669291
+"('reviews_delta', 'is_sold_by_amazon')",0.6322834645669291
+"('stars_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.6330708661417322
+"('stars_delta', 'reviews_delta', 'is_sold_by_amazon', 'is_top_clicked')",0.6346456692913385
+"('is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6346456692913385
+"('stars_delta', 'is_sold_by_amazon', 'random_noise')",0.6346456692913385
+"('stars_delta', 'is_sold_by_amazon', 'is_top_clicked')",0.6354330708661416
+"('stars_delta', 'is_sold_by_amazon')",0.6354330708661418
+"('stars_delta', 'reviews_delta', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6393700787401574
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6393700787401574
+"('stars_delta', 'reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.6401574803149606
+"('stars_delta', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6417322834645669
+"('reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.64251968503937
+"('reviews_delta', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.6456692913385826
+"('reviews_delta', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.648031496062992
+"('reviews_delta', 'is_sold_by_amazon', 'is_top_clicked')",0.6496062992125984
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.700787401574803
+"('stars_delta', 'is_amazon')",0.7015748031496062
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.7015748031496064
+"('stars_delta', 'is_amazon', 'is_top_clicked')",0.7023622047244094
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_top_clicked', 'random_noise')",0.7047244094488188
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'random_noise')",0.7047244094488189
+"('stars_delta', 'is_amazon', 'is_top_clicked', 'random_noise')",0.7055118110236219
+"('stars_delta', 'reviews_delta', 'is_amazon')",0.7055118110236219
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked')",0.7062992125984251
+"('is_amazon', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.7062992125984252
+"('stars_delta', 'is_amazon', 'random_noise')",0.7062992125984252
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'random_noise')",0.7070866141732283
+"('is_amazon',)",0.7078740157480314
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon')",0.7078740157480314
+"('is_amazon', 'is_top_clicked', 'random_noise')",0.7086614173228347
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked')",0.7086614173228347
+"('stars_delta', 'reviews_delta', 'is_amazon', 'random_noise')",0.7086614173228347
+"('is_amazon', 'random_noise')",0.7094488188976377
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'random_noise')",0.7094488188976379
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked')",0.7094488188976379
+"('reviews_delta', 'is_amazon')",0.7094488188976379
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_top_clicked', 'random_noise')",0.7094488188976379
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_top_clicked')",0.7102362204724408
+"('reviews_delta', 'is_amazon', 'random_noise')",0.7102362204724411
+"('reviews_delta', 'is_amazon', 'is_top_clicked', 'random_noise')",0.7102362204724411
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon')",0.7110236220472441
+"('reviews_delta', 'is_amazon', 'is_top_clicked')",0.7118110236220472
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7118110236220473
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon')",0.7125984251968503
+"('is_amazon', 'is_shipped_by_amazon', 'random_noise')",0.7125984251968505
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7133858267716536
+"('is_amazon', 'is_shipped_by_amazon', 'is_top_clicked')",0.7141732283464568
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.7141732283464568
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7149606299212599
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.7149606299212599
+"('is_amazon', 'is_shipped_by_amazon')",0.715748031496063
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7157480314960631
+"('stars_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7165354330708662
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'random_noise')",0.7165354330708663
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7165354330708663
+"('stars_delta', 'is_amazon', 'is_sold_by_amazon', 'random_noise')",0.7173228346456695
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.7173228346456695
+"('stars_delta', 'is_amazon', 'is_sold_by_amazon')",0.7173228346456695
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.7173228346456695
+"('stars_delta', 'reviews_delta', 'is_amazon', 'is_sold_by_amazon')",0.7181102362204725
+"('reviews_delta', 'is_amazon', 'is_sold_by_amazon')",0.7181102362204725
+"('stars_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7188976377952756
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.7188976377952757
+"('stars_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7188976377952757
+"('is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7188976377952757
+"('is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7188976377952757
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7196850393700788
+"('is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon')",0.7196850393700789
+"('reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.7196850393700789
+"('is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.7196850393700789
+"('is_amazon', 'is_sold_by_amazon')",0.720472440944882
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.720472440944882
+"('reviews_delta', 'is_amazon', 'is_shipped_by_amazon', 'is_sold_by_amazon', 'random_noise')",0.7212598425196852
+"('reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7212598425196852
+"('is_amazon', 'is_sold_by_amazon', 'is_top_clicked', 'random_noise')",0.7220472440944883
+"('is_amazon', 'is_sold_by_amazon', 'random_noise')",0.7228346456692915
+"('reviews_delta', 'is_amazon', 'is_sold_by_amazon', 'random_noise')",0.7251968503937009
+"('is_amazon', 'is_sold_by_amazon', 'is_top_clicked')",0.725984251968504
+"('is_amazon', 'is_top_clicked')",0.7267716535433071

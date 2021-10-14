@@ -1,0 +1,8 @@
+Feature,Accuracy
+with just is_amazon,70.7
+with just is_sold_by_amazon,61.5
+with just random_noise,49.3
+with just is_shipped_by_amazon,51.8
+with just reviews_delta,51.9
+with just is_top_clicked,54.9
+with just stars_delta,54.5
