@@ -4,7 +4,7 @@ This repository contains code to reproduce the findings featured in our story "[
 Our methodology is described in "[How We Analyzed Amazon’s Treatment of Its Brands in Search Results](https://themarkup.org/amazons-advantage/2021/10/14/how-we-analyzed-amazons-treatment-of-its-brands-in-search-results)".
 
 Data that we collected and analyzed is in the `data` folder.<br>
-To use the full input dataset (which is not hosted here), please refer to the [Download data](#download-data).<br>
+To use the full input dataset (which is not hosted here), please refer to [Download data](#download-data).<br>
 
 Jupyter notebooks used for data preprocessing and analysis are available in the `notebooks` folder.<br>
 Descriptions for each notebook are outlined in the [Notebooks](#notebooks) section below.
@@ -33,7 +33,7 @@ Feature engineering training set, finding optimal hyperparameters, and performin
 Visualizing the survey results from our national panel of 1,000 adults.
 
 ### 4-limiations-product-page-changes.ipynb
-Analysis of how often the Buy Box's default shipper and seller change between Amazon and a third party. This stat sends up in the limitations.
+Analysis of how often the Buy Box's default shipper and seller change between Amazon and a third party.
 
 ### utils.py
 Contains convenient functions used in the notebooks.
@@ -78,7 +78,7 @@ data
 
 `data/output/datasets/products.csv.xz` parsed product pages from the searches above (N=157,405 product pages). 
 
-`data/output/training_set.csv.gz` metadata used to train and evaluate random forests. Additionally, feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
+`data/output/training_set.csv.gz` metadata used to train and evaluate the random forest. Additionally, feature engineering is conducted in `notebooks/2-random-forest-analysis.ipynb`, which produces `pairwise_training_set.csv.gz`.
 
 Every file in `data/input` except `combined_queries_with_source.csv` is stored in AWS s3. Those are not hosted in this repository.
 
